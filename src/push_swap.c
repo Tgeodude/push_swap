@@ -28,11 +28,28 @@ int main(int argc, char **argv)
         sorting_three_b(&head2);
         pa(&head1, &head2);
         pa(&head1, &head2);
+        exit(0);
     }
     else if (push_swap.count <= 100)
+    {
+        tmp = head1;
+        i = 0;
+        while (i++,tmp->next && tmp->index < tmp->next->index)
+            tmp = tmp->next;
+        if (i == push_swap.count)
+            exit(0);
         sorting_hund(&head1, &head2, 15);
+    }
     else if (push_swap.count > 100)
+    {
+        tmp = head1;
+        i = 0;
+        while (i++,tmp->next && tmp->index < tmp->next->index)
+            tmp = tmp->next;
+        if (i == push_swap.count)
+            exit(0);
         sorting_hund(&head1, &head2, 30);
+    }
     //sleep(30);
     exit (0);
 }
