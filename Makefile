@@ -21,8 +21,8 @@ SRC			= $(SRC_DIR)/push_swap.c \
 			$(SRC_DIR)/functions_duble.c \
 			$(SRC_DIR)/sort_three.c \
 			$(SRC_DIR)/sort_five.c \
-			$(SRC_DIR)/sort_three_ab.c \
-
+			$(SRC_DIR)/sort_hund.c \
+			$(SRC_DIR)/sort_three_ab.c		
 
 SRC_BON_DIR	= src_bonus
 SRC_BON		= $(SRC_BON_DIR)/.c  \

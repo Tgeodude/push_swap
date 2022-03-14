@@ -95,7 +95,7 @@ int    sorting_three_b(b_stek **head2)
 {
     if (find_count(head2) == 2)
     {
-        if ((*head2)->index > (*head2)->next->index)
+        if ((*head2)->index < (*head2)->next->index)
         {
             sb(head2);
             return(0);

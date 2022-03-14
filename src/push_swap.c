@@ -15,20 +15,24 @@ int main(int argc, char **argv)
     put_in_list(&push_swap, &head1);
     if (push_swap.count <= 3)
         sorting_three(&push_swap, &head1);
-    if (push_swap.count == 5)
+    else if (push_swap.count <= 5)
     {
         tmp = head1;
-        i = -1;
-        while (i++, tmp->index < tmp->next->index && tmp)
+        i = 0;
+        while (i++,tmp->next && tmp->index < tmp->next->index)
             tmp = tmp->next;
         if (i == push_swap.count)
             exit(0);
-        pb(&head1, &head2);
-        pb(&head1, &head2);
+        sorting_five(&head1, &head2);
         sorting_three_a(&push_swap, &head1);
         sorting_three_b(&head2);
-        sorting_five(&head1, &head2);
+        pa(&head1, &head2);
+        pa(&head1, &head2);
     }
+    else if (push_swap.count <= 100)
+        sorting_hund(&head1, &head2, 15);
+    else if (push_swap.count > 100)
+        sorting_hund(&head1, &head2, 30);
     //sleep(30);
     exit (0);
 }

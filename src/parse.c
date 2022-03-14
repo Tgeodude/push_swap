@@ -37,16 +37,17 @@ void    check_duplicate(t_data *push_swap)
     int n;
 
     i = -1;
-    n = 0;
+    n = 1;
     while (i++, push_swap->stek_a[i])
     {
-        while (n++, push_swap->stek_a[i + n])
+        while (push_swap->stek_a[i + n])
         {
             if (push_swap->stek_a[i] == push_swap->stek_a[i + n] && push_swap->stek_a[i + n])
             {
-                write(1,"Errordup\n", 9);
+                write(2,"Error\n", 9);
                 exit(0);
             }
+            n++;
         }
         n = 0;
     }
@@ -85,5 +86,4 @@ void    parsing_line(t_data *push_swap, int argc, char **argv)
             push_swap->stek_a[count++] = ft_atoi(argv[i]);
     }
     push_swap->count = count;
-    check_duplicate(push_swap);
 }

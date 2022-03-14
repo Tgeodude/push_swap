@@ -6,7 +6,7 @@ void    chech_valid(const char *s)
     {
         if (*s < 48 || *s > 57)
         {
-            write(1, "Errornoword\n", 12);
+            write(2, "Error\n", 12);
             exit(0);
         }
     }

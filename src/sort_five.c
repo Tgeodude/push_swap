@@ -1,33 +1,58 @@
 #include "push_swap.h"
 
+int find_min(a_stek **head1)
+{
+    a_stek *tmp1;
+    int min;
+
+    tmp1 = (*head1);
+    min = 2147483647;
+    while (tmp1)
+    {
+        if (tmp1->index < min)
+            min = tmp1->index;
+        tmp1 = tmp1->next;
+    }
+    return (min);
+}
+
 void    sorting_five(a_stek **head1, b_stek **head2)
 {
-    if ((*head2)->index < (*head1)->index)
+    int min1;
+    int min2;
+
+    min1 = find_min(head1);
+    if ((*head1)->index != min1 || (*head1)->next->index != min1)
     {
-        pa(head1, head2);
-        while ((*head2)->index < (*head1)->next->next->index)
+        while (((*head1)->index != min1))
             rra(head1);
-        pa(head1, head2);
-        while ((*head1)->index > (*head1)->next->index)
-            ra(head1);
-        ra(head1);
-        exit(0);
+        pb(head1, head2);
     }
-    else if ((*head2)->next->index > (*head1)->index)
+    else
     {
-        while ((*head1)->next->next->index > (*head2)->next->index)
-            rra(head1);
-        sb(head2);
-        pa(head1, head2);
-        while ((*head2)->index < (*head1)->next->next->index)
-            rra(head1);
-        pa(head1, head2);
-        while ((*head1)->index > (*head1)->next->index)
+        if ((*head1)->index != min1)
+            pb(head1, head2);
+        else
+        {
             ra(head1);
-        ra(head1);
-        exit(0);
+            pb(head1, head2);
+        }
     }
-    pa(head1, head2);
-    pa(head1, head2);
-    exit(0);
+    min2 = find_min(head1);
+    if ((*head1)->index != min2 || (*head1)->next->index != min2)
+    {
+        while (((*head1)->index != min2))
+            rra(head1);
+        pb(head1, head2);
+    }
+    else
+    {
+        if ((*head1)->index != min2)
+            pb(head1, head2);
+        else
+        {
+            ra(head1);
+            pb(head1, head2);
+        }
+    }
 }

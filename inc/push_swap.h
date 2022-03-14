@@ -50,5 +50,6 @@ int     sorting_three_a(t_data *push_swap, a_stek **head1);
 int     sorting_three_b(b_stek **head2);
 void    sorting_five(a_stek **head1, b_stek **head2);
 void    sorting_three(t_data *push_swap, a_stek **head1);
+void    sorting_hund(a_stek **head1, b_stek **head2, int n);
 
 #endif
