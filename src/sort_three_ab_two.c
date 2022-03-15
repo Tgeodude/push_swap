@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   valid.c                                            :+:      :+:    :+:   */
+/*   sort_three_ab_two.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgeodude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/15 21:37:38 by tgeodude          #+#    #+#             */
-/*   Updated: 2022/03/15 21:39:10 by tgeodude         ###   ########.fr       */
+/*   Created: 2022/03/15 21:37:11 by tgeodude          #+#    #+#             */
+/*   Updated: 2022/03/15 21:42:24 by tgeodude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	chech_valid(const char *s)
+int	sorting_three_b(t_bstek **head2, t_astek **head1)
 {
-	int	i;
-
-	i = -1;
-	while (i++, s[i])
+	if (find_count(head2) == 2)
 	{
-		if (s[i] == 45 && (!(s[i + 1] >= '0' && s[i + 1] <= '9')))
+		if ((*head2)->index < (*head2)->next->index)
 		{
-			write(2, "Error\n", 6);
-			exit(0);
-		}
-		if ((s[i] >= 48 && s[i] <= 57) && s[i + 1] == 45 && s[i + 1])
-		{
-			write(2, "Error\n", 6);
-			exit(0);
-		}
-		if (s[i] != 45 && s[i] != 32)
-		{
-			if (s[i] < 48 || s[i] > 57)
-			{
-				write(2, "Error\n", 6);
-				exit(0);
-			}
+			sb(head2);
+			pa(head1, head2);
+			pa(head1, head2);
+			return (0);
 		}
 	}
+	pa(head1, head2);
+	pa(head1, head2);
+	return (0);
 }

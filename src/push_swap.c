@@ -42,14 +42,12 @@ int	main(int argc, char **argv)
 	else if (push_swap.count <= 5)
 	{
 		sorting_five_one(&head1, &head2);
-		sorting_five_two(&head1, &head2);
 		sorting_three_a(&push_swap, &head1);
 		sorting_three_b(&head2, &head1);
 		exit(0);
 	}
 	else if (push_swap.count <= 100)
-		sorting_hund(&head1, &head2, 15);
-	else if (push_swap.count > 100)
-		sorting_hund(&head1, &head2, 30);
-	exit (0);
+		sorting_hund_one(&head1, &head2, 15);
+	sorting_hund_one(&head1, &head2, 30);
+	exit(0);
 }

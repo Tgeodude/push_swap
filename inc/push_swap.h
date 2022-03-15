@@ -6,7 +6,7 @@
 /*   By: tgeodude <tgeodude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:44:44 by tgeodude          #+#    #+#             */
-/*   Updated: 2022/03/15 19:00:26 by tgeodude         ###   ########.fr       */
+/*   Updated: 2022/03/15 21:42:09 by tgeodude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,10 @@ void	pop_a(t_astek **head1);
 int		sorting_three_a(t_data *push_swap, t_astek **head1);
 int		sorting_three_b(t_bstek **head2, t_astek **head1);
 void	sorting_five_one(t_astek **head1, t_bstek **head2);
-void    sorting_five_two(t_astek **head1, t_bstek **head2);
+void	sorting_five_two(t_astek **head1, t_bstek **head2);
 void	sorting_three(t_data *push_swap, t_astek **head1);
-void	sorting_hund(t_astek **head1, t_bstek **head2, int n);
+void	sorting_hund_one(t_astek **head1, t_bstek **head2, int n);
+void	sorting_hund_two(t_astek **head1, t_bstek **head2, int n);
+int		find_count(t_bstek **head2);
 
 #endif
