@@ -1,8 +1,8 @@
 #include "push_swap.h"
 
-void    sorting_three(t_data *push_swap, a_stek **head1)
+void    sorting_three(t_data *push_swap, t_astek **head1)
 {
-    a_stek *tmp1;
+    t_astek *tmp1;
     
     if (push_swap->count == 2)
     {

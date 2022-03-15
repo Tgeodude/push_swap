@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_hund.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgeodude <tgeodude@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/15 19:05:11 by tgeodude          #+#    #+#             */
+/*   Updated: 2022/03/15 19:05:13 by tgeodude         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int    find_max(b_stek **head2)
+int    find_max(t_bstek **head2)
 {
-    b_stek *tmp;
+    t_bstek *tmp;
     int max;
 
     max = -2147483648;
@@ -16,9 +28,9 @@ int    find_max(b_stek **head2)
     return (max);
 }
 
-int    find_max_place(b_stek **head2)
+int    find_max_place(t_bstek **head2)
 {
-    b_stek *tmp;
+    t_bstek *tmp;
     int max;
     int place;
     int i;
@@ -38,7 +50,7 @@ int    find_max_place(b_stek **head2)
     return (place);
 }
 
-void    sorting_hund(a_stek **head1, b_stek **head2, int n)
+void    sorting_hund(t_astek **head1, t_bstek **head2, int n)
 {
     int counter;
     int max;

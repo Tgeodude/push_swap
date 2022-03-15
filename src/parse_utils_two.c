@@ -1,25 +1,49 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_utils_two.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgeodude <tgeodude@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/15 18:34:12 by tgeodude          #+#    #+#             */
+/*   Updated: 2022/03/15 18:34:13 by tgeodude         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	check_atoi(const char *str, int h, int i)
 {
 	if ((str[0]) == '9' && h == 214748364)
-    {
-        if (i == -1)
-        {
-            write(2, "Error\n", 6);
-            exit(0);
-        }
-    }
-    if (h > 214748364)
-    {
-        write(2, "Error\n", 6);
-        exit(0);
-    }
-    if (i != -1 && h == 214748364 && ((*str) - '0') > 7)
-    {
-        write(2, "Error\n", 6);
-        exit(0);
-    }
+	{
+		if (i == -1)
+		{
+			write(2, "Error\n", 6);
+			exit(0);
+		}
+	}
+	if (h > 214748364)
+	{
+		write(2, "Error\n", 6);
+		exit(0);
+	}
+	if (i != -1 && h == 214748364 && ((*str) - '0') > 7)
+	{
+		write(2, "Error\n", 6);
+		exit(0);
+	}
+}
+
+void	chech_atoi_one(const char *str, int h, int i)
+{
+	if ((str[0]) == '9' && h == 214748364)
+	{
+		if (i == -1)
+		{
+			write(2, "Error\n", 6);
+			exit(0);
+		}
+	}
 }
 
 int	ft_atoi(const char *str)
@@ -39,15 +63,8 @@ int	ft_atoi(const char *str)
 	}
 	while ((*str) >= '0' && (*str) <= '9')
 	{
-        if ((str[0]) == '9' && h == 214748364)
-        {
-            if (i == -1)
-            {
-                write(2, "Error\n", 6);
-                exit(0);
-            }
-        }
-        check_atoi(str, h, i);
+		chech_atoi_one(str, h, i);
+		check_atoi(str, h, i);
 		h = (h * 10) + ((*str) - '0');
 		str++;
 	}

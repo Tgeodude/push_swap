@@ -1,9 +1,9 @@
 #include "push_swap.h"
 
-void    find_max_min_and_count_a(t_data *push_swap, a_stek **head1)
+void    find_max_min_and_count_a(t_data *push_swap, t_astek **head1)
 {
     int i;
-    a_stek *tmp1;
+    t_astek *tmp1;
 
     tmp1 = (*head1);
     i = -1;
@@ -20,7 +20,7 @@ void    find_max_min_and_count_a(t_data *push_swap, a_stek **head1)
     push_swap->count = i;
 }
 
-int    sorting_three_a(t_data *push_swap, a_stek **head1)
+int    sorting_three_a(t_data *push_swap, t_astek **head1)
 {
     find_max_min_and_count_a(push_swap, head1);
     if (push_swap->count == 2)
@@ -79,9 +79,9 @@ int    sorting_three_a(t_data *push_swap, a_stek **head1)
     return(0);   
 }
 
-int find_count(b_stek **head2)
+int find_count(t_bstek **head2)
 {
-    b_stek *tmp1;
+    t_bstek *tmp1;
     int i;
 
     tmp1 = (*head2);
@@ -91,15 +91,19 @@ int find_count(b_stek **head2)
     return (i);
 }
 
-int    sorting_three_b(b_stek **head2)
+int    sorting_three_b(t_bstek **head2, t_astek **head1)
 {
     if (find_count(head2) == 2)
     {
         if ((*head2)->index < (*head2)->next->index)
         {
             sb(head2);
+            pa(&head1, &head2);
+            pa(&head1, &head2);
             return(0);
         }
     }
+    pa(&head1, &head2);
+    pa(&head1, &head2);
     return(0);
 }
