@@ -31,28 +31,6 @@ int counter_number(int argc, char **argv)
     return (count);
 }
 
-void    check_duplicate(t_data *push_swap)
-{
-    int i;
-    int n;
-
-    i = -1;
-    n = 1;
-    while (i++, push_swap->stek_a[i])
-    {
-        while (push_swap->stek_a[i + n])
-        {
-            if (push_swap->stek_a[i] == push_swap->stek_a[i + n] && push_swap->stek_a[i + n])
-            {
-                write(2,"Error\n", 9);
-                exit(0);
-            }
-            n++;
-        }
-        n = 0;
-    }
-}
-
 int parse_argv(const char *s, int count, t_data *push_swap)
 {
     int i;

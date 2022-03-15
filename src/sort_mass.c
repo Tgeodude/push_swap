@@ -21,6 +21,23 @@ void    bubble_sort(t_data *push_swap)
     }
 }
 
+void    check_duplicate(t_data *push_swap)
+{
+    int i;
+    int n;
+
+    i = -1;
+    n = 1;
+    while (i++, push_swap->stek_a[i])
+    {
+        if (push_swap->stek_a[i] == push_swap->stek_a[i + 1] && push_swap->stek_a[i + 1])
+        {
+            write(2, "Error\n", 6);
+            exit(0);
+        }
+    }
+}
+
 void    sorting_mass(t_data *push_swap)
 {
     int i;
@@ -33,6 +50,7 @@ void    sorting_mass(t_data *push_swap)
     push_swap->max = push_swap->stek_b[(push_swap->count) - 1];
     bubble_sort(push_swap);
     i = -1;
+    check_duplicate(push_swap);
     while (i++, i < push_swap->count)
         push_swap->stek_a[i] = push_swap->stek_b[i];
     i = -1;

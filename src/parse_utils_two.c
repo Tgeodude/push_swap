@@ -1,23 +1,23 @@
 #include "push_swap.h"
 
-void    check_atoi(const char *str, int h, int i)
+void	check_atoi(const char *str, int h, int i)
 {
-    if ((str[0]) == '9' && h == 214748364)
+	if ((str[0]) == '9' && h == 214748364)
     {
         if (i == -1)
         {
-            write(1, "Errorint\n", 9);
+            write(2, "Error\n", 6);
             exit(0);
         }
     }
     if (h > 214748364)
     {
-        write(1, "Errorint\n", 9);
+        write(2, "Error\n", 6);
         exit(0);
     }
     if (i != -1 && h == 214748364 && ((*str) - '0') > 7)
     {
-        write(1, "Errorint\n", 9);
+        write(2, "Error\n", 6);
         exit(0);
     }
 }
@@ -43,7 +43,7 @@ int	ft_atoi(const char *str)
         {
             if (i == -1)
             {
-                write(1, "Errorint\n", 9);
+                write(2, "Error\n", 6);
                 exit(0);
             }
         }
