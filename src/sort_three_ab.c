@@ -29,7 +29,6 @@ void	find_max_min_and_count_a(t_data *push_swap, t_astek **head1)
 			push_swap->min = tmp1->index;
 		tmp1 = tmp1->next;
 	}
-	push_swap->count = i;
 }
 
 int	sorting_three_a_maxmin(t_astek **head1, int min)
@@ -54,26 +53,23 @@ int	sorting_three_a_maxmin_two(t_astek **head1, int min)
 int	sorting_three_a(t_data *push_swap, t_astek **head1)
 {
 	find_max_min_and_count_a(push_swap, head1);
-	if (push_swap->count == 3)
+	if (push_swap->max == (*head1)->index)
+		return (sorting_three_a_maxmin(head1, push_swap->min));
+	if (push_swap->min == (*head1)->index)
 	{
-		if (push_swap->max == (*head1)->index)
-			return (sorting_three_a_maxmin(head1, push_swap->min));
-		if (push_swap->min == (*head1)->index)
+		if (push_swap->max == (*head1)->next->index)
 		{
-			if (push_swap->max == (*head1)->next->index)
-			{
-				sa(head1);
-				ra(head1);
-				return (0);
-			}
+			sa(head1);
+			ra(head1);
+			return (0);
 		}
-		if (push_swap->min == (*head1)->next->index)
+	}
+	if (push_swap->min == (*head1)->next->index)
+	{
+		if (push_swap->max == (*head1)->next->next->index)
 		{
-			if (push_swap->max == (*head1)->next->next->index)
-			{
-				sa(head1);
-				return (0);
-			}
+			sa(head1);
+			return (0);
 		}
 	}
 	return (sorting_three_a_maxmin_two(head1, push_swap->min));

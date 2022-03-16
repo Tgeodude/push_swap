@@ -12,8 +12,13 @@
 
 #include "push_swap.h"
 
-int	sorting_three_b(t_bstek **head2, t_astek **head1)
+int	sorting_three_b(t_bstek **head2, t_astek **head1, int count)
 {
+	if (count == 4)
+	{
+		pa(head1, head2);
+		exit(0);
+	}
 	if (find_count(head2) == 2)
 	{
 		if ((*head2)->index < (*head2)->next->index)
@@ -21,10 +26,10 @@ int	sorting_three_b(t_bstek **head2, t_astek **head1)
 			sb(head2);
 			pa(head1, head2);
 			pa(head1, head2);
-			return (0);
+			exit (0);
 		}
 	}
 	pa(head1, head2);
 	pa(head1, head2);
-	return (0);
+	exit (0);
 }

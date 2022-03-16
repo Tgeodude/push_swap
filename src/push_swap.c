@@ -41,10 +41,9 @@ int	main(int argc, char **argv)
 		sorting_three(&push_swap, &head1);
 	else if (push_swap.count <= 5)
 	{
-		sorting_five_one(&head1, &head2);
+		sorting_five_one(&head1, &head2, push_swap.count);
 		sorting_three_a(&push_swap, &head1);
-		sorting_three_b(&head2, &head1);
-		exit(0);
+		sorting_three_b(&head2, &head1, push_swap.count);
 	}
 	else if (push_swap.count <= 100)
 		sorting_hund_one(&head1, &head2, 15);

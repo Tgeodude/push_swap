@@ -51,7 +51,7 @@ void	sorting_five_two(t_astek **head1, t_bstek **head2)
 	}
 }
 
-void	sorting_five_one(t_astek **head1, t_bstek **head2)
+int	sorting_five_one(t_astek **head1, t_bstek **head2, int count)
 {
 	int	min1;
 
@@ -72,5 +72,8 @@ void	sorting_five_one(t_astek **head1, t_bstek **head2)
 			pb(head1, head2);
 		}
 	}
+	if (count == 4)
+		return (0);
 	sorting_five_two(head1, head2);
+	return (0);
 }
