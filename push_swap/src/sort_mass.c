@@ -37,10 +37,8 @@ void	bubble_sort(t_data *push_swap)
 void	check_duplicate(t_data *push_swap)
 {
 	int	i;
-	int	n;
 
 	i = -1;
-	n = 1;
 	while (i++, push_swap->stek_a[i])
 	{
 		if (push_swap->stek_a[i] == push_swap->stek_a[i + 1] \

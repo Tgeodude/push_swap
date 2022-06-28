@@ -1,4 +1,4 @@
-#NAMES
+#AMES
 NAME		= push_swap
 MAKE		= make
 
