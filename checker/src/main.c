@@ -1,5 +1,58 @@
 #include "checker.h"
 
+void	do_command(t_astek *a_stek, t_bstek *b_stek, int command)
+{
+	if (command == 1)
+		sa(a_stek);
+	else if (command == 2)
+		sb(b_stek);
+	else if (command == 3)
+		ss(a_stek, b_stek);
+	else if (command == 4)
+		pa(a_stek, b_stek);
+	else if (command == 5)
+		pb(a_stek, b_stek);
+	else if (command == 6)
+		ra(a_stek);
+	else if (command == 7)
+		rb(b_stek);
+	else if (command == 8)
+		rr(a_stek, b_stek);
+	else if (command == 9)
+		rra(a_stek);
+	else if (command == 10)
+		rrb(b_stek);
+	else if (command == 11)
+		rrr(a_stek, b_stek);
+}
+
+int	choose_command(char *str)
+{
+	if (ft_strcmp(str, "sa\n"))
+		return (1);
+	if (ft_strcmp(str, "sb\n"))
+		return (2);
+	if (ft_strcmp(str, "ss\n"))
+		return (3);
+	if (ft_strcmp(str, "pa\n"))
+		return (4);
+	if (ft_strcmp(str, "pb\n"))
+		return (5);
+	if (ft_strcmp(str, "ra\n"))
+		return (6);
+	if (ft_strcmp(str, "rb\n"))
+		return (7);
+	if (ft_strcmp(str, "rr\n"))
+		return (8);
+	if (ft_strcmp(str, "rra\n"))
+		return (9);
+	if (ft_strcmp(str, "rrb\n"))
+		return (10);
+	if (ft_strcmp(str, "rrr\n"))
+		return (11);
+	return (-1);
+}
+
 int first_word(char *str)
 {
 	int	i;
