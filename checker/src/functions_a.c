@@ -22,7 +22,6 @@ void	sa(t_astek **head1)
 	tmp = tmp->next;
 	(*head1)->index = tmp->index;
 	tmp->index = bubble;
-	\\write(1, "sa\n", 3);
 }
 
 void	ra(t_astek **head1)
@@ -41,7 +40,6 @@ void	ra(t_astek **head1)
 		tmp2 = tmp2->next;
 		tmp1 = tmp1->next;
 	}
-	\\write(1, "ra\n", 3);
 }
 
 void	pa(t_astek **head1, t_bstek **head2)
@@ -53,7 +51,6 @@ void	pa(t_astek **head1, t_bstek **head2)
 	tmp->next = (*head1);
 	(*head1) = tmp;
 	pop_b(head2);
-	\\write(1, "pa\n", 3);
 }
 
 void	pop_a(t_astek **head1)
@@ -91,5 +88,4 @@ void	rra(t_astek **head1)
 		tmp1 = tmp2;
 		i--;
 	}
-	\\write(1, "rra\n", 4);
 }

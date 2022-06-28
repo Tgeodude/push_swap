@@ -1,6 +1,6 @@
 #include "checker.h"
 
-void	do_command(t_astek *a_stek, t_bstek *b_stek, int command)
+void	do_command(t_astek **a_stek, t_bstek **b_stek, int command)
 {
 	if (command == 1)
 		sa(a_stek);
@@ -84,20 +84,23 @@ int main(int argc, char **argv)
 	t_data	checker;
 	int		command;
 	
+	a_stek = NULL;
 	if (argc == 1)
 		return (write(2, "Error with argc\n", 16) - 15);
     if (argc == 2 && first_word(argv[1]))
 		return (write(2, "Error with input\n", 17) - 16);
 	parsing_line(&checker, argc, argv);
-	put_in_list(&checker, a_stek);
+	put_in_list(&checker, &a_stek);
+	b_stek = NULL;
 	while (1)
 	{
 		command = parse_command();
 		if (command == -1)
-			print_error();
+			return (write(2, "Error with command\n", 18) - 17);
 		if (command == 0)
 			break ;
-		do_command(a_stek, b_stek, command);
+		do_command(&a_stek, &b_stek, command);
 	}
-
+	check_is_sort(a_stek);
+	return (0);
 }

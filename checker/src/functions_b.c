@@ -22,7 +22,6 @@ void	sb(t_bstek **head2)
 	tmp = tmp->next;
 	(*head2)->index = tmp->index;
 	tmp->index = bubble;
-	\\write(1, "sb\n", 3);
 }
 
 void	pop_b(t_bstek **head2)
@@ -45,7 +44,6 @@ void	pb(t_astek **head1, t_bstek **head2)
 	tmp->next = (*head2);
 	(*head2) = tmp;
 	pop_a(head1);
-	\\write(1, "pb\n", 3);
 }
 
 void	rb(t_bstek **head2)
@@ -64,7 +62,6 @@ void	rb(t_bstek **head2)
 		tmp2 = tmp2->next;
 		tmp1 = tmp1->next;
 	}
-	\\write(1, "rb\n", 3);
 }
 
 void	rrb(t_bstek **head2)
@@ -91,5 +88,4 @@ void	rrb(t_bstek **head2)
 		tmp1 = tmp2;
 		i--;
 	}
-	\\write(1, "rrb\n", 4);
 }
