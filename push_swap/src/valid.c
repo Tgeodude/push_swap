@@ -24,7 +24,7 @@ void	chech_valid(const char *s)
 			write(2, "Error\n", 6);
 			exit(0);
 		}
-		if ((s[i] >= 48 && s[i] <= 57) && s[i + 1] == 45 && s[i + 1])
+		if ((s[i] >= 48 && s[i] <= 57) && s[i + 1] == 45 && s[i + 1] && (s[i] == 34 && s[i + 1] == 34))
 		{
 			write(2, "Error\n", 6);
 			exit(0);
