@@ -54,7 +54,7 @@ int	ft_atoi(const char *str)
 	h = 0;
 	i = 1;
 	while ((*str) == ' ' || ((*str) >= '\t' && (*str) <= '\r'))
-		str++;
+			str++;
 	if ((*str) == '-' || (*str) == '+')
 	{
 		if ((*str == '-'))

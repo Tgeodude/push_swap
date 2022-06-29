@@ -4,7 +4,7 @@ MAKE		= make
 
 #COMP USE CC INSTEAD?!?!??!
 CC			= cc
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror -g
 
 #SRC
 SRC_DIR		= src

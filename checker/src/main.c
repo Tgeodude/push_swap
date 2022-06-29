@@ -1,5 +1,15 @@
 #include "checker.h"
 
+void	free_line(char **s)
+{
+	int	i;
+
+	i = -1;
+	while (i++, s[i])
+		free(s[i]);
+	free(s);
+}
+
 void	do_command(t_astek **a_stek, t_bstek **b_stek, int command)
 {
 	if (command == 1)
@@ -53,17 +63,6 @@ int	choose_command(char *str)
 	return (-1);
 }
 
-int first_word(char *str)
-{
-	int	i;
-
-	i = -1;
-	while (++i, str[i])
-		if (str[i] == 0 && !str[++i])
-			return(-2);
-	return (ft_atoi(str));
-}
-
 int	parse_command(void)
 {
 	int		command;
@@ -77,17 +76,17 @@ int	parse_command(void)
 	return (command);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    t_astek	*a_stek;
-    t_bstek	*b_stek;
+	t_astek	*a_stek;
+	t_bstek	*b_stek;
 	t_data	checker;
 	int		command;
-	
+
 	a_stek = NULL;
 	if (argc == 1)
 		return (write(2, "Error with argc\n", 16) - 15);
-    if (argc == 2 && first_word(argv[1]))
+	if (argc == 2 && !(ft_strchr(argv[1], ' ')))
 		return (write(2, "Error with input\n", 17) - 16);
 	parsing_line(&checker, argc, argv);
 	put_in_list(&checker, &a_stek);
@@ -101,6 +100,6 @@ int main(int argc, char **argv)
 			break ;
 		do_command(&a_stek, &b_stek, command);
 	}
-	check_is_sort(a_stek);
+	check_is_sort(a_stek, b_stek);
 	return (0);
 }

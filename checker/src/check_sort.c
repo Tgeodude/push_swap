@@ -1,24 +1,27 @@
 #include "checker.h"
 
-void check_is_sort(t_astek *a_stek)
+int	check_is_sort(t_astek *a_stek, t_bstek *b_stek)
 {
-    t_astek *tmp1;
+	t_astek	*tmp1;
 
-    tmp1 = (a_stek);
-    while (tmp1->next != NULL)
-    {
-        if (!(tmp1->index < tmp1->next->index))
-        {
-            printf("KO\n");
-            break ;
-        }
-        if (tmp1->next->next == NULL && tmp1->next != NULL)
+	tmp1 = (a_stek);
+	if (b_stek)
+		return (write(2, "KO\n", 3) - 2);
+	while (tmp1->next != NULL)
+	{
+		if (!(tmp1->index < tmp1->next->index))
 		{
-            printf("OK\n");
-            break;
+			write(1, "KO\n", 3);
+			break ;
+		}
+		if (tmp1->next->next == NULL && tmp1->next != NULL)
+		{
+			printf(1, "OK\n", 3);
+			break ;
 		}
 		tmp1 = tmp1->next;
-    }
+	}
+	return (0);
 }
 
 int	ft_strlen_ps(char *str)
