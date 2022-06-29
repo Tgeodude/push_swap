@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_3.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgeodude <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tgeodude <tgeodude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 22:47:13 by tgeodude          #+#    #+#             */
-/*   Updated: 2022/06/29 22:47:14 by tgeodude         ###   ########.fr       */
+/*   Updated: 2022/06/29 23:54:23 by tgeodude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,11 @@ int	parse_argv(char *s, int count, t_data *push_swap)
 	int		i;
 	char	**s1;
 	char	*s2;
+	int		j;
 
 	i = -1;
 	s2 = s;
+	j = count;
 	while (i++, s2[i])
 	{
 		chech_valid(&s2[i]);
@@ -62,6 +64,8 @@ int	parse_argv(char *s, int count, t_data *push_swap)
 	while (i++, s1[i])
 		push_swap->stek_a[count++] = ft_atoi(&s1[i][0]);
 	free_line(s1);
+	if (count == j)
+		exit(1);
 	return (count);
 }
 
@@ -81,6 +85,7 @@ void	parsing_line(t_data *push_swap, int argc, char **argv)
 	while (i++, i < argc)
 	{
 		chech_valid(argv[i]);
+		chech_valid_two(argv[i]);
 		if (ft_strchr(argv[i], ' '))
 			count = parse_argv(argv[i], count, push_swap);
 		else
