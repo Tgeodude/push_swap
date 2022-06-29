@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_sort.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgeodude <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/29 22:46:11 by tgeodude          #+#    #+#             */
+/*   Updated: 2022/06/29 22:48:32 by tgeodude         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "checker.h"
 
 int	check_is_sort(t_astek *a_stek, t_bstek *b_stek)
@@ -6,7 +18,7 @@ int	check_is_sort(t_astek *a_stek, t_bstek *b_stek)
 
 	tmp1 = (a_stek);
 	if (b_stek)
-		return (write(2, "KO\n", 3) - 2);
+		return (write(1, "KO\n", 3) - 2);
 	while (tmp1->next != NULL)
 	{
 		if (!(tmp1->index < tmp1->next->index))
@@ -16,7 +28,7 @@ int	check_is_sort(t_astek *a_stek, t_bstek *b_stek)
 		}
 		if (tmp1->next->next == NULL && tmp1->next != NULL)
 		{
-			printf(1, "OK\n", 3);
+			write(1, "OK\n", 3);
 			break ;
 		}
 		tmp1 = tmp1->next;

@@ -16,7 +16,8 @@ SRC			= $(SRC_DIR)/main.c \
 			$(SRC_DIR)/get_next_line.c \
 			$(SRC_DIR)/get_next_line_utils.c \
 			$(SRC_DIR)/utils.c \
-
+			$(SRC_DIR)/utils_2.c \
+			$(SRC_DIR)/utils_3.c \
 
 #INC
 INC_DIR		= inc
