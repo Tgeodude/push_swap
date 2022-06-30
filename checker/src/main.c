@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgeodude <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tgeodude <tgeodude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 22:46:19 by tgeodude          #+#    #+#             */
-/*   Updated: 2022/06/29 22:46:20 by tgeodude         ###   ########.fr       */
+/*   Updated: 2022/06/30 15:02:20 by tgeodude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ int	main(int argc, char **argv)
 	if (argc == 2 && !(ft_strchr(argv[1], ' ')))
 		return (write(2, "Error with input\n", 17) - 16);
 	parsing_line(&checker, argc, argv);
+	check_duplicate(&checker);
 	put_in_list(&checker, &a_stek);
 	b_stek = NULL;
 	while (1)

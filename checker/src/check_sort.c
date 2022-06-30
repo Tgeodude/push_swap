@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgeodude <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tgeodude <tgeodude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 22:46:11 by tgeodude          #+#    #+#             */
-/*   Updated: 2022/06/29 22:48:32 by tgeodude         ###   ########.fr       */
+/*   Updated: 2022/06/30 15:01:45 by tgeodude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,20 @@ int	ft_strcmp(char *str_1, char *str_2)
 			return (1);
 	}
 	return (0);
+}
+
+void	check_duplicate(t_data *push_swap)
+{
+	int	i;
+
+	i = -1;
+	while (i++, push_swap->stek_a[i])
+	{
+		if (push_swap->stek_a[i] == push_swap->stek_a[i + 1] \
+				&& push_swap->stek_a[i + 1])
+		{
+			write(2, "Error\n", 6);
+			exit(0);
+		}
+	}
 }

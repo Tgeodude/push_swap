@@ -6,7 +6,7 @@
 /*   By: tgeodude <tgeodude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 22:47:51 by tgeodude          #+#    #+#             */
-/*   Updated: 2022/06/29 23:53:34 by tgeodude         ###   ########.fr       */
+/*   Updated: 2022/06/30 15:01:53 by tgeodude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	put_in_list(t_data *push_swap, t_astek **head1);
 int		ft_strcmp(char *str_1, char *str_2);
 void	chech_valid(const char *s);
 void	chech_valid_two(const char *s);
+void	check_duplicate(t_data *push_swap);
 int		check_is_sort(t_astek *a_stek, t_bstek *b_stek);
 char	**ft_split(char const *s, char c);
 void	free_line(char **s);
