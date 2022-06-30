@@ -77,10 +77,7 @@ void	parsing_line(t_data *push_swap, int argc, char **argv)
 	i = 0;
 	count = 0;
 	if (argc <= 1)
-	{
-		write(2, "Error: input is empty\n", 22);
-		exit(1);
-	}
+		print_error();
 	push_swap->stek_a = malloc(sizeof(int *) * counter_number(argc, argv));
 	while (i++, i < argc)
 	{
@@ -94,7 +91,7 @@ void	parsing_line(t_data *push_swap, int argc, char **argv)
 	push_swap->count = count;
 }
 
-void	chech_valid(const char *s)
+int	chech_valid(const char *s)
 {
 	int	i;
 
@@ -102,22 +99,12 @@ void	chech_valid(const char *s)
 	while (i++, s[i])
 	{
 		if (s[i] == 45 && (!(s[i + 1] >= '0' && s[i + 1] <= '9')))
-		{
-			write(2, "Error\n", 6);
-			exit(0);
-		}
-		if ((s[i] >= 48 && s[i] <= 57) && s[i + 1] == 45 && s[i + 1])
-		{
-			write(2, "Error\n", 6);
-			exit(0);
-		}
-		if (s[i] != 45 && s[i] != 32 && (s[i] < '\t' && s[i] > '\r'))
-		{
+			print_error();
+		if ((s[i] >= 48 && s[i] <= 57) && s[i + 1] && s[i + 1] == 45)
+			print_error();
+		if (s[i] != 45 && s[i] != 32 && (s[i] < '\t' || s[i] > '\r'))
 			if (s[i] < 48 || s[i] > 57)
-			{
-				write(2, "Error\n", 6);
-				exit(0);
-			}
-		}
+				print_error();
 	}
+	return (1);
 }

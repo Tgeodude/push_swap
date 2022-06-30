@@ -67,15 +67,19 @@ int	ft_strcmp(char *str_1, char *str_2)
 void	check_duplicate(t_data *push_swap)
 {
 	int	i;
+	int	j;
 
 	i = -1;
-	while (i++, push_swap->stek_a[i])
+	while (i++, i < push_swap->count - 1)
 	{
-		if (push_swap->stek_a[i] == push_swap->stek_a[i + 1] \
-				&& push_swap->stek_a[i + 1])
+		j = 0;
+		while (j++, i + j < push_swap->count)
 		{
-			write(2, "Error\n", 6);
-			exit(0);
+			if (push_swap->stek_a[i] == push_swap->stek_a[i + j])
+			{
+				write(2, "Error\n", 6);
+				exit(1);
+			}
 		}
 	}
 }

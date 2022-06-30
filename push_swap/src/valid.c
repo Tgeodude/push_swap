@@ -30,7 +30,7 @@ void	chech_valid(const char *s)
 			write(2, "Error\n", 6);
 			exit(0);
 		}
-		if ((s[i] != 45 && s[i] != 32) || (s[i] >= '\t' && s[i] <= '\r'))
+		if ((s[i] != 45 && s[i] != 32) && (s[i] < '\t' || s[i] > '\r'))
 		{
 			if (s[i] < 48 || s[i] > 57)
 			{

@@ -30,6 +30,12 @@ void	rrr(t_astek **head1, t_bstek **head2)
 	rrb(head2);
 }
 
+void	print_error(void)
+{
+	write(2, "Error\n", 6);
+	exit(0);
+}
+
 void	chech_valid_two(const char *s)
 {
 	int	i;
@@ -41,7 +47,7 @@ void	chech_valid_two(const char *s)
 	{
 		while (++i, s[i])
 		{
-			if (s[i] >= '0' && s[i] <= '9')
+			if ((s[i] >= '0' && s[i] <= '9'))
 			{
 				flag = 0;
 				break ;

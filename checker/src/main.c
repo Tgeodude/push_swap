@@ -96,10 +96,9 @@ int	main(int argc, char **argv)
 	int		command;
 
 	a_stek = NULL;
-	if (argc == 1)
-		return (write(2, "Error with argc\n", 16) - 15);
-	if (argc == 2 && !(ft_strchr(argv[1], ' ')))
-		return (write(2, "Error with input\n", 17) - 16);
+	if (argc == 1 || (argc == 2 && ((!(ft_strchr(argv[1], ' ')) \
+		&& !(ft_strchr(argv[1], '	'))) || alone_number(argv[1]))))
+		print_error();
 	parsing_line(&checker, argc, argv);
 	check_duplicate(&checker);
 	put_in_list(&checker, &a_stek);
@@ -108,7 +107,7 @@ int	main(int argc, char **argv)
 	{
 		command = parse_command();
 		if (command == -1)
-			return (write(2, "Error with command\n", 18) - 17);
+			print_error();
 		if (command == 0)
 			break ;
 		do_command(&a_stek, &b_stek, command);

@@ -17,6 +17,7 @@ SRC			= $(SRC_DIR)/main.c \
 			$(SRC_DIR)/utils.c \
 			$(SRC_DIR)/utils_2.c \
 			$(SRC_DIR)/utils_3.c \
+			$(SRC_DIR)/check_alone.c \
 
 #INC
 INC_DIR		= inc
