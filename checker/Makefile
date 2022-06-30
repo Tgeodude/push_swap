@@ -2,7 +2,6 @@
 NAME		= checker
 MAKE		= make
 
-#COMP USE CC INSTEAD?!?!??!
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror -g
 

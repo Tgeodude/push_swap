@@ -100,7 +100,7 @@ void	parsing_line(t_data *push_swap, int argc, char **argv)
 	count = 0;
 	if (argc <= 1)
 	{
-		write(2, "Error: input is empty\n", 22);
+		write(2, "Error\n", 6);
 		exit(1);
 	}
 	push_swap->stek_a = malloc(sizeof(int *) * counter_number(argc, argv));

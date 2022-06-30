@@ -46,12 +46,12 @@ void	pa(t_astek **head1, t_bstek **head2)
 {
 	t_astek	*tmp;
 
-	tmp = (t_astek *)malloc(sizeof(t_astek));
 	if (!(*head2))
 	{
-		write(2, "Error: stek b is empty\n", 23);
+		write(2, "Error\n", 6);
 		exit(1);
 	}
+	tmp = (t_astek *)malloc(sizeof(t_astek));
 	tmp->index = (*head2)->index;
 	tmp->next = (*head1);
 	(*head1) = tmp;

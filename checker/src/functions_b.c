@@ -39,6 +39,11 @@ void	pb(t_astek **head1, t_bstek **head2)
 {
 	t_bstek	*tmp;
 
+	if (!(*head1))
+	{
+		write(2, "Error\n", 6);
+		exit(1);
+	}
 	tmp = (t_bstek *)malloc(sizeof(t_bstek));
 	tmp->index = (*head1)->index;
 	tmp->next = (*head2);

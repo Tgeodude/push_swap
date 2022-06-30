@@ -2,7 +2,6 @@
 NAME		= push_swap
 MAKE		= make
 
-#COMP USE CC INSTEAD?!?!??!
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror -g
 
